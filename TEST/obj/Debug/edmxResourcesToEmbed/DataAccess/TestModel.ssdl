@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BanDo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenBanDo" Type="nvarchar(max)" />
+    <Property Name="LoaiBanDo" Type="datetime" />
+    <Property Name="TenTapTin" Type="nvarchar(max)" />
+    <Property Name="DuongDanURL" Type="nvarchar(max)" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="ThoiGianCapNhat" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BanTinDuBao">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar(max)" />
+    <Property Name="TomTatNoiDung" Type="nvarchar(max)" />
+    <Property Name="NoiDung" Type="nvarchar(max)" />
+    <Property Name="NgayThucHien" Type="datetime" />
+    <Property Name="MaLoaiBanTin" Type="int" />
+    <Property Name="MaKVHC" Type="int" />
+    <Property Name="MoTaViTri" Type="nvarchar(max)" />
+    <Property Name="MaKhuVuc" Type="int" />
+    <Property Name="ThoiGianDuBao" Type="int" />
+    <Property Name="MaCapDoDuBao" Type="int" />
+    <Property Name="TenToChucDuBao" Type="nvarchar(max)" />
+    <Property Name="MaLoaiThienTai" Type="int" />
+    <Property Name="TrangThaiDuyet" Type="bit" />
+    <Property Name="BanTin_Status" Type="bit" Nullable="false" />
+    <Property Name="NguoiDang" Type="nvarchar(max)" />
+    <Property Name="NguonTinDuBao" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="KEY_SEARCH" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CapDo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiCapDo" Type="nvarchar(max)" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThoiGianCapNhat" Type="datetime" />
+  </EntityType>
+  <EntityType Name="CompanyST">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NameCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressCompany" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressURL" Type="nvarchar" MaxLength="100" />
+    <Property Name="ThoiGianCapNhat" Type="datetime" />
+  </EntityType>
+  <EntityType Name="DonViToChuc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDonVi" Type="nvarchar(max)" />
+    <Property Name="DiaChi" Type="nvarchar(max)" />
+    <Property Name="MaSoThue" Type="nchar" MaxLength="10" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="ToaDoX" Type="varchar" MaxLength="50" />
+    <Property Name="ToaDoY" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Employees1">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+    <Property Name="Salary" Type="int" />
+    <Property Name="DayTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="FileDinhKem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenFileDinhKem" Type="nvarchar(max)" />
+    <Property Name="NgayTao" Type="datetime" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="DuongDanURL" Type="nvarchar(max)" />
+    <Property Name="IsVideo" Type="bit" Nullable="false" />
+    <Property Name="IsImage" Type="bit" Nullable="false" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhuVuc">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKhuVuc" Type="nvarchar(max)" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="KhuVucHanhChinh">
+    <Key>
+      <PropertyRef Name="MaKVHC" />
+    </Key>
+    <Property Name="MaKVHC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenKVHC" Type="nvarchar(max)" />
+    <Property Name="MaKVHC_CapTren" Type="int" />
+    <Property Name="MaKhuVuc" Type="int" />
+  </EntityType>
+  <EntityType Name="LoaiBanTin">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiBanTin" Type="nvarchar(max)" />
+    <Property Name="MaThanhPhanDuBao" Type="int" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoaiThienTai">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiThienTai" Type="nvarchar(max)" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PhimHinhAnh">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar(max)" />
+    <Property Name="NgayThang" Type="datetime" />
+    <Property Name="TenTapTin" Type="nvarchar(max)" />
+    <Property Name="DuongDanURL" Type="nvarchar(max)" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="ThoiGianCapNhat" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+    <Property Name="IsVideo" Type="bit" Nullable="false" />
+    <Property Name="IsImage" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TepBanTinDinhKem">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTapTin" Type="nvarchar(max)" />
+    <Property Name="MaBanTinDuBao" Type="int" />
+    <Property Name="MoTa" Type="nvarchar(max)" />
+    <Property Name="NgayDinhKem" Type="datetime" />
+    <Property Name="DuongDan" Type="nvarchar(max)" />
+    <Property Name="IsVideo" Type="bit" />
+    <Property Name="IsHinhAnh" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ThongTinGiayPhep">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SoHieu" Type="nvarchar(max)" />
+    <Property Name="Nam" Type="nvarchar(max)" />
+    <Property Name="NgayThang" Type="datetime" />
+    <Property Name="TenDonVi" Type="nvarchar(max)" />
+    <Property Name="PhamViHoatDong" Type="nvarchar(max)" />
+    <Property Name="DoiTuongCungCap" Type="int" />
+    <Property Name="GiaHan" Type="nvarchar(max)" />
+    <Property Name="DonViKyXacNhan" Type="int" />
+    <Property Name="MaCapDoDuBao" Type="int" />
+    <Property Name="TrangThaiGiayPhep" Type="nvarchar(max)" />
+    <Property Name="LyDoThuHoi" Type="nvarchar(max)" />
+    <Property Name="IsDeleted" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="BanTin_KhuVuc_FK3">
+    <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
+    <End Role="BanTinDuBao" Type="Self.BanTinDuBao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhuVuc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BanTinDuBao">
+        <PropertyRef Name="MaKhuVuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KhuVucHanhChinh_KhuVuc_FK2">
+    <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
+    <End Role="KhuVucHanhChinh" Type="Self.KhuVucHanhChinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhuVuc">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="KhuVucHanhChinh">
+        <PropertyRef Name="MaKhuVuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="KVHC_CapDuoi_KVHC_CapTren_FK1">
+    <End Role="KhuVucHanhChinh" Type="Self.KhuVucHanhChinh" Multiplicity="0..1" />
+    <End Role="KhuVucHanhChinh1" Type="Self.KhuVucHanhChinh" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="KhuVucHanhChinh">
+        <PropertyRef Name="MaKVHC" />
+      </Principal>
+      <Dependent Role="KhuVucHanhChinh1">
+        <PropertyRef Name="MaKVHC_CapTren" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TepBanTinDinhKem_BanTinDubao_FK1">
+    <End Role="BanTinDuBao" Type="Self.BanTinDuBao" Multiplicity="0..1" />
+    <End Role="TepBanTinDinhKem" Type="Self.TepBanTinDinhKem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BanTinDuBao">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TepBanTinDinhKem">
+        <PropertyRef Name="MaBanTinDuBao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TESTModelStoreContainer">
+    <EntitySet Name="BanDo" EntityType="Self.BanDo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BanTinDuBao" EntityType="Self.BanTinDuBao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CapDo" EntityType="Self.CapDo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyST" EntityType="Self.CompanyST" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DonViToChuc" EntityType="Self.DonViToChuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees1" EntityType="Self.Employees1" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FileDinhKem" EntityType="Self.FileDinhKem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhuVuc" EntityType="Self.KhuVuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="KhuVucHanhChinh" EntityType="Self.KhuVucHanhChinh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiBanTin" EntityType="Self.LoaiBanTin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiThienTai" EntityType="Self.LoaiThienTai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PhimHinhAnh" EntityType="Self.PhimHinhAnh" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TepBanTinDinhKem" EntityType="Self.TepBanTinDinhKem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ThongTinGiayPhep" EntityType="Self.ThongTinGiayPhep" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="BanTin_KhuVuc_FK3" Association="Self.BanTin_KhuVuc_FK3">
+      <End Role="KhuVuc" EntitySet="KhuVuc" />
+      <End Role="BanTinDuBao" EntitySet="BanTinDuBao" />
+    </AssociationSet>
+    <AssociationSet Name="KhuVucHanhChinh_KhuVuc_FK2" Association="Self.KhuVucHanhChinh_KhuVuc_FK2">
+      <End Role="KhuVuc" EntitySet="KhuVuc" />
+      <End Role="KhuVucHanhChinh" EntitySet="KhuVucHanhChinh" />
+    </AssociationSet>
+    <AssociationSet Name="KVHC_CapDuoi_KVHC_CapTren_FK1" Association="Self.KVHC_CapDuoi_KVHC_CapTren_FK1">
+      <End Role="KhuVucHanhChinh" EntitySet="KhuVucHanhChinh" />
+      <End Role="KhuVucHanhChinh1" EntitySet="KhuVucHanhChinh" />
+    </AssociationSet>
+    <AssociationSet Name="TepBanTinDinhKem_BanTinDubao_FK1" Association="Self.TepBanTinDinhKem_BanTinDubao_FK1">
+      <End Role="BanTinDuBao" EntitySet="BanTinDuBao" />
+      <End Role="TepBanTinDinhKem" EntitySet="TepBanTinDinhKem" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

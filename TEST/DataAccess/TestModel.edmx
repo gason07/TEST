@@ -1,0 +1,781 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TESTModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BanDo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenBanDo" Type="nvarchar(max)" />
+          <Property Name="LoaiBanDo" Type="datetime" />
+          <Property Name="TenTapTin" Type="nvarchar(max)" />
+          <Property Name="DuongDanURL" Type="nvarchar(max)" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="ThoiGianCapNhat" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BanTinDuBao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TieuDe" Type="nvarchar(max)" />
+          <Property Name="TomTatNoiDung" Type="nvarchar(max)" />
+          <Property Name="NoiDung" Type="nvarchar(max)" />
+          <Property Name="NgayThucHien" Type="datetime" />
+          <Property Name="MaLoaiBanTin" Type="int" />
+          <Property Name="MaKVHC" Type="int" />
+          <Property Name="MoTaViTri" Type="nvarchar(max)" />
+          <Property Name="MaKhuVuc" Type="int" />
+          <Property Name="ThoiGianDuBao" Type="int" />
+          <Property Name="MaCapDoDuBao" Type="int" />
+          <Property Name="TenToChucDuBao" Type="nvarchar(max)" />
+          <Property Name="MaLoaiThienTai" Type="int" />
+          <Property Name="TrangThaiDuyet" Type="bit" />
+          <Property Name="BanTin_Status" Type="bit" Nullable="false" />
+          <Property Name="NguoiDang" Type="nvarchar(max)" />
+          <Property Name="NguonTinDuBao" Type="nvarchar(max)" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="KEY_SEARCH" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="CapDo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenLoaiCapDo" Type="nvarchar(max)" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="ThoiGianCapNhat" Type="datetime" />
+        </EntityType>
+        <EntityType Name="CompanyST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressCompany" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressURL" Type="nvarchar" MaxLength="100" />
+          <Property Name="ThoiGianCapNhat" Type="datetime" />
+        </EntityType>
+        <EntityType Name="DonViToChuc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenDonVi" Type="nvarchar(max)" />
+          <Property Name="DiaChi" Type="nvarchar(max)" />
+          <Property Name="MaSoThue" Type="nchar" MaxLength="10" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="ToaDoX" Type="varchar" MaxLength="50" />
+          <Property Name="ToaDoY" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employees1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gender" Type="nvarchar" MaxLength="50" />
+          <Property Name="Salary" Type="int" />
+          <Property Name="DayTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="FileDinhKem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenFileDinhKem" Type="nvarchar(max)" />
+          <Property Name="NgayTao" Type="datetime" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="DuongDanURL" Type="nvarchar(max)" />
+          <Property Name="IsVideo" Type="bit" Nullable="false" />
+          <Property Name="IsImage" Type="bit" Nullable="false" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KhuVuc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenKhuVuc" Type="nvarchar(max)" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KhuVucHanhChinh">
+          <Key>
+            <PropertyRef Name="MaKVHC" />
+          </Key>
+          <Property Name="MaKVHC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenKVHC" Type="nvarchar(max)" />
+          <Property Name="MaKVHC_CapTren" Type="int" />
+          <Property Name="MaKhuVuc" Type="int" />
+        </EntityType>
+        <EntityType Name="LoaiBanTin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenLoaiBanTin" Type="nvarchar(max)" />
+          <Property Name="MaThanhPhanDuBao" Type="int" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoaiThienTai">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenLoaiThienTai" Type="nvarchar(max)" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhimHinhAnh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TieuDe" Type="nvarchar(max)" />
+          <Property Name="NgayThang" Type="datetime" />
+          <Property Name="TenTapTin" Type="nvarchar(max)" />
+          <Property Name="DuongDanURL" Type="nvarchar(max)" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="ThoiGianCapNhat" Type="datetime" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+          <Property Name="IsVideo" Type="bit" Nullable="false" />
+          <Property Name="IsImage" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TepBanTinDinhKem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TenTapTin" Type="nvarchar(max)" />
+          <Property Name="MaBanTinDuBao" Type="int" />
+          <Property Name="MoTa" Type="nvarchar(max)" />
+          <Property Name="NgayDinhKem" Type="datetime" />
+          <Property Name="DuongDan" Type="nvarchar(max)" />
+          <Property Name="IsVideo" Type="bit" />
+          <Property Name="IsHinhAnh" Type="bit" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ThongTinGiayPhep">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SoHieu" Type="nvarchar(max)" />
+          <Property Name="Nam" Type="nvarchar(max)" />
+          <Property Name="NgayThang" Type="datetime" />
+          <Property Name="TenDonVi" Type="nvarchar(max)" />
+          <Property Name="PhamViHoatDong" Type="nvarchar(max)" />
+          <Property Name="DoiTuongCungCap" Type="int" />
+          <Property Name="GiaHan" Type="nvarchar(max)" />
+          <Property Name="DonViKyXacNhan" Type="int" />
+          <Property Name="MaCapDoDuBao" Type="int" />
+          <Property Name="TrangThaiGiayPhep" Type="nvarchar(max)" />
+          <Property Name="LyDoThuHoi" Type="nvarchar(max)" />
+          <Property Name="IsDeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="BanTin_KhuVuc_FK3">
+          <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
+          <End Role="BanTinDuBao" Type="Self.BanTinDuBao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BanTinDuBao">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KhuVucHanhChinh_KhuVuc_FK2">
+          <End Role="KhuVuc" Type="Self.KhuVuc" Multiplicity="0..1" />
+          <End Role="KhuVucHanhChinh" Type="Self.KhuVucHanhChinh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="KhuVucHanhChinh">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KVHC_CapDuoi_KVHC_CapTren_FK1">
+          <End Role="KhuVucHanhChinh" Type="Self.KhuVucHanhChinh" Multiplicity="0..1" />
+          <End Role="KhuVucHanhChinh1" Type="Self.KhuVucHanhChinh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVucHanhChinh">
+              <PropertyRef Name="MaKVHC" />
+            </Principal>
+            <Dependent Role="KhuVucHanhChinh1">
+              <PropertyRef Name="MaKVHC_CapTren" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TepBanTinDinhKem_BanTinDubao_FK1">
+          <End Role="BanTinDuBao" Type="Self.BanTinDuBao" Multiplicity="0..1" />
+          <End Role="TepBanTinDinhKem" Type="Self.TepBanTinDinhKem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BanTinDuBao">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TepBanTinDinhKem">
+              <PropertyRef Name="MaBanTinDuBao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TESTModelStoreContainer">
+          <EntitySet Name="BanDo" EntityType="Self.BanDo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BanTinDuBao" EntityType="Self.BanTinDuBao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CapDo" EntityType="Self.CapDo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Company" EntityType="Self.Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CompanyST" EntityType="Self.CompanyST" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DonViToChuc" EntityType="Self.DonViToChuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees1" EntityType="Self.Employees1" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FileDinhKem" EntityType="Self.FileDinhKem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhuVuc" EntityType="Self.KhuVuc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="KhuVucHanhChinh" EntityType="Self.KhuVucHanhChinh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiBanTin" EntityType="Self.LoaiBanTin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LoaiThienTai" EntityType="Self.LoaiThienTai" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PhimHinhAnh" EntityType="Self.PhimHinhAnh" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TepBanTinDinhKem" EntityType="Self.TepBanTinDinhKem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThongTinGiayPhep" EntityType="Self.ThongTinGiayPhep" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="BanTin_KhuVuc_FK3" Association="Self.BanTin_KhuVuc_FK3">
+            <End Role="KhuVuc" EntitySet="KhuVuc" />
+            <End Role="BanTinDuBao" EntitySet="BanTinDuBao" />
+          </AssociationSet>
+          <AssociationSet Name="KhuVucHanhChinh_KhuVuc_FK2" Association="Self.KhuVucHanhChinh_KhuVuc_FK2">
+            <End Role="KhuVuc" EntitySet="KhuVuc" />
+            <End Role="KhuVucHanhChinh" EntitySet="KhuVucHanhChinh" />
+          </AssociationSet>
+          <AssociationSet Name="KVHC_CapDuoi_KVHC_CapTren_FK1" Association="Self.KVHC_CapDuoi_KVHC_CapTren_FK1">
+            <End Role="KhuVucHanhChinh" EntitySet="KhuVucHanhChinh" />
+            <End Role="KhuVucHanhChinh1" EntitySet="KhuVucHanhChinh" />
+          </AssociationSet>
+          <AssociationSet Name="TepBanTinDinhKem_BanTinDubao_FK1" Association="Self.TepBanTinDinhKem_BanTinDubao_FK1">
+            <End Role="BanTinDuBao" EntitySet="BanTinDuBao" />
+            <End Role="TepBanTinDinhKem" EntitySet="TepBanTinDinhKem" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TESTModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Employees1">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Salary" Type="Int32" />
+          <Property Name="DayTime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="TESTEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Employees1" EntityType="Self.Employees1" />
+          <EntitySet Name="Companies" EntityType="TESTModel.Company" />
+          <EntitySet Name="CompanySTs" EntityType="TESTModel.CompanyST" />
+          <EntitySet Name="BanDoes" EntityType="TESTModel.BanDo" />
+          <EntitySet Name="PhimHinhAnhs" EntityType="TESTModel.PhimHinhAnh" />
+          <EntitySet Name="FileDinhKems" EntityType="TESTModel.FileDinhKem" />
+          <EntitySet Name="BanTinDuBaos" EntityType="TESTModel.BanTinDuBao" />
+          <EntitySet Name="TepBanTinDinhKems" EntityType="TESTModel.TepBanTinDinhKem" />
+          <AssociationSet Name="TepBanTinDinhKem_BanTinDubao_FK1" Association="TESTModel.TepBanTinDinhKem_BanTinDubao_FK1">
+            <End Role="BanTinDuBao" EntitySet="BanTinDuBaos" />
+            <End Role="TepBanTinDinhKem" EntitySet="TepBanTinDinhKems" />
+          </AssociationSet>
+          <EntitySet Name="ThongTinGiayPheps" EntityType="TESTModel.ThongTinGiayPhep" />
+          <EntitySet Name="KhuVucs" EntityType="TESTModel.KhuVuc" />
+          <AssociationSet Name="BanTin_KhuVuc_FK3" Association="TESTModel.BanTin_KhuVuc_FK3">
+            <End Role="KhuVuc" EntitySet="KhuVucs" />
+            <End Role="BanTinDuBao" EntitySet="BanTinDuBaos" />
+          </AssociationSet>
+          <EntitySet Name="LoaiBanTins" EntityType="TESTModel.LoaiBanTin" />
+          <EntitySet Name="LoaiThienTais" EntityType="TESTModel.LoaiThienTai" />
+          <EntitySet Name="CapDoes" EntityType="TESTModel.CapDo" />
+          <EntitySet Name="KhuVucHanhChinhs" EntityType="TESTModel.KhuVucHanhChinh" />
+          <AssociationSet Name="KhuVucHanhChinh_KhuVuc_FK2" Association="TESTModel.KhuVucHanhChinh_KhuVuc_FK2">
+            <End Role="KhuVuc" EntitySet="KhuVucs" />
+            <End Role="KhuVucHanhChinh" EntitySet="KhuVucHanhChinhs" />
+          </AssociationSet>
+          <AssociationSet Name="KVHC_CapDuoi_KVHC_CapTren_FK1" Association="TESTModel.KVHC_CapDuoi_KVHC_CapTren_FK1">
+            <End Role="KhuVucHanhChinh" EntitySet="KhuVucHanhChinhs" />
+            <End Role="KhuVucHanhChinh1" EntitySet="KhuVucHanhChinhs" />
+          </AssociationSet>
+          <EntitySet Name="DonViToChucs" EntityType="TESTModel.DonViToChuc" />
+        </EntityContainer>
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddressCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianCapNhat" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CompanyST">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddressCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddressURL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianCapNhat" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="BanDo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenBanDo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LoaiBanDo" Type="DateTime" Precision="3" />
+          <Property Name="TenTapTin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DuongDanURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianCapNhat" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PhimHinhAnh">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TieuDe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayThang" Type="DateTime" Precision="3" />
+          <Property Name="TenTapTin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DuongDanURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ThoiGianCapNhat" Type="DateTime" Precision="3" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="IsVideo" Type="Boolean" Nullable="false" />
+          <Property Name="IsImage" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FileDinhKem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenFileDinhKem" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayTao" Type="DateTime" Precision="3" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DuongDanURL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsVideo" Type="Boolean" Nullable="false" />
+          <Property Name="IsImage" Type="Boolean" Nullable="false" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BanTinDuBao">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TieuDe" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TomTatNoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayThucHien" Type="DateTime" Precision="3" />
+          <Property Name="MaLoaiBanTin" Type="Int32" />
+          <Property Name="MaKVHC" Type="Int32" />
+          <Property Name="MoTaViTri" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaKhuVuc" Type="Int32" />
+          <Property Name="ThoiGianDuBao" Type="Int32" />
+          <Property Name="MaCapDoDuBao" Type="Int32" />
+          <Property Name="TenToChucDuBao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaLoaiThienTai" Type="Int32" />
+          <Property Name="TrangThaiDuyet" Type="Boolean" />
+          <Property Name="BanTin_Status" Type="Boolean" Nullable="false" />
+          <Property Name="NguoiDang" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NguonTinDuBao" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="KEY_SEARCH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TepBanTinDinhKems" Relationship="TESTModel.TepBanTinDinhKem_BanTinDubao_FK1" FromRole="BanTinDuBao" ToRole="TepBanTinDinhKem" />
+          <NavigationProperty Name="KhuVuc" Relationship="TESTModel.BanTin_KhuVuc_FK3" FromRole="BanTinDuBao" ToRole="KhuVuc" />
+        </EntityType>
+        <EntityType Name="TepBanTinDinhKem">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenTapTin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaBanTinDuBao" Type="Int32" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayDinhKem" Type="DateTime" Precision="3" />
+          <Property Name="DuongDan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsVideo" Type="Boolean" />
+          <Property Name="IsHinhAnh" Type="Boolean" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BanTinDuBao" Relationship="TESTModel.TepBanTinDinhKem_BanTinDubao_FK1" FromRole="TepBanTinDinhKem" ToRole="BanTinDuBao" />
+        </EntityType>
+        <Association Name="TepBanTinDinhKem_BanTinDubao_FK1">
+          <End Type="TESTModel.BanTinDuBao" Role="BanTinDuBao" Multiplicity="0..1" />
+          <End Type="TESTModel.TepBanTinDinhKem" Role="TepBanTinDinhKem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BanTinDuBao">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TepBanTinDinhKem">
+              <PropertyRef Name="MaBanTinDuBao" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ThongTinGiayPhep">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SoHieu" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="NgayThang" Type="DateTime" Precision="3" />
+          <Property Name="TenDonVi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="PhamViHoatDong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DoiTuongCungCap" Type="Int32" />
+          <Property Name="GiaHan" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DonViKyXacNhan" Type="Int32" />
+          <Property Name="MaCapDoDuBao" Type="Int32" />
+          <Property Name="TrangThaiGiayPhep" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LyDoThuHoi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KhuVuc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenKhuVuc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="BanTinDuBaos" Relationship="TESTModel.BanTin_KhuVuc_FK3" FromRole="KhuVuc" ToRole="BanTinDuBao" />
+          <NavigationProperty Name="KhuVucHanhChinhs" Relationship="TESTModel.KhuVucHanhChinh_KhuVuc_FK2" FromRole="KhuVuc" ToRole="KhuVucHanhChinh" />
+        </EntityType>
+        <Association Name="BanTin_KhuVuc_FK3">
+          <End Type="TESTModel.KhuVuc" Role="KhuVuc" Multiplicity="0..1" />
+          <End Type="TESTModel.BanTinDuBao" Role="BanTinDuBao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="BanTinDuBao">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="LoaiBanTin">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLoaiBanTin" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaThanhPhanDuBao" Type="Int32" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LoaiThienTai">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLoaiThienTai" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CapDo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenLoaiCapDo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MoTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="KhuVucHanhChinh">
+          <Key>
+            <PropertyRef Name="MaKVHC" />
+          </Key>
+          <Property Name="MaKVHC" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenKVHC" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaKVHC_CapTren" Type="Int32" />
+          <Property Name="MaKhuVuc" Type="Int32" />
+          <NavigationProperty Name="KhuVuc" Relationship="TESTModel.KhuVucHanhChinh_KhuVuc_FK2" FromRole="KhuVucHanhChinh" ToRole="KhuVuc" />
+          <NavigationProperty Name="KhuVucHanhChinh1" Relationship="TESTModel.KVHC_CapDuoi_KVHC_CapTren_FK1" FromRole="KhuVucHanhChinh" ToRole="KhuVucHanhChinh1" />
+          <NavigationProperty Name="KhuVucHanhChinh2" Relationship="TESTModel.KVHC_CapDuoi_KVHC_CapTren_FK1" FromRole="KhuVucHanhChinh1" ToRole="KhuVucHanhChinh" />
+        </EntityType>
+        <Association Name="KhuVucHanhChinh_KhuVuc_FK2">
+          <End Type="TESTModel.KhuVuc" Role="KhuVuc" Multiplicity="0..1" />
+          <End Type="TESTModel.KhuVucHanhChinh" Role="KhuVucHanhChinh" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVuc">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="KhuVucHanhChinh">
+              <PropertyRef Name="MaKhuVuc" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="KVHC_CapDuoi_KVHC_CapTren_FK1">
+          <End Type="TESTModel.KhuVucHanhChinh" Role="KhuVucHanhChinh" Multiplicity="0..1" />
+          <End Type="TESTModel.KhuVucHanhChinh" Role="KhuVucHanhChinh1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="KhuVucHanhChinh">
+              <PropertyRef Name="MaKVHC" />
+            </Principal>
+            <Dependent Role="KhuVucHanhChinh1">
+              <PropertyRef Name="MaKVHC_CapTren" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="DonViToChuc">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TenDonVi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DiaChi" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MaSoThue" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="IsDeleted" Type="Boolean" Nullable="false" />
+          <Property Name="ToaDoX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ToaDoY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TESTModelStoreContainer" CdmEntityContainer="TESTEntities">
+          <EntitySetMapping Name="Employees1">
+            <EntityTypeMapping TypeName="TESTModel.Employees1">
+              <MappingFragment StoreEntitySet="Employees1">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="DayTime" ColumnName="DayTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="TESTModel.Company">
+              <MappingFragment StoreEntitySet="Company">
+                <ScalarProperty Name="ThoiGianCapNhat" ColumnName="ThoiGianCapNhat" />
+                <ScalarProperty Name="AddressCompany" ColumnName="AddressCompany" />
+                <ScalarProperty Name="NameCompany" ColumnName="NameCompany" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanySTs">
+            <EntityTypeMapping TypeName="TESTModel.CompanyST">
+              <MappingFragment StoreEntitySet="CompanyST">
+                <ScalarProperty Name="ThoiGianCapNhat" ColumnName="ThoiGianCapNhat" />
+                <ScalarProperty Name="AddressURL" ColumnName="AddressURL" />
+                <ScalarProperty Name="AddressCompany" ColumnName="AddressCompany" />
+                <ScalarProperty Name="NameCompany" ColumnName="NameCompany" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BanDoes">
+            <EntityTypeMapping TypeName="TESTModel.BanDo">
+              <MappingFragment StoreEntitySet="BanDo">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ThoiGianCapNhat" ColumnName="ThoiGianCapNhat" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="DuongDanURL" ColumnName="DuongDanURL" />
+                <ScalarProperty Name="TenTapTin" ColumnName="TenTapTin" />
+                <ScalarProperty Name="LoaiBanDo" ColumnName="LoaiBanDo" />
+                <ScalarProperty Name="TenBanDo" ColumnName="TenBanDo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PhimHinhAnhs">
+            <EntityTypeMapping TypeName="TESTModel.PhimHinhAnh">
+              <MappingFragment StoreEntitySet="PhimHinhAnh">
+                <ScalarProperty Name="IsImage" ColumnName="IsImage" />
+                <ScalarProperty Name="IsVideo" ColumnName="IsVideo" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="ThoiGianCapNhat" ColumnName="ThoiGianCapNhat" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="DuongDanURL" ColumnName="DuongDanURL" />
+                <ScalarProperty Name="TenTapTin" ColumnName="TenTapTin" />
+                <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FileDinhKems">
+            <EntityTypeMapping TypeName="TESTModel.FileDinhKem">
+              <MappingFragment StoreEntitySet="FileDinhKem">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsImage" ColumnName="IsImage" />
+                <ScalarProperty Name="IsVideo" ColumnName="IsVideo" />
+                <ScalarProperty Name="DuongDanURL" ColumnName="DuongDanURL" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+                <ScalarProperty Name="TenFileDinhKem" ColumnName="TenFileDinhKem" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BanTinDuBaos">
+            <EntityTypeMapping TypeName="TESTModel.BanTinDuBao">
+              <MappingFragment StoreEntitySet="BanTinDuBao">
+                <ScalarProperty Name="KEY_SEARCH" ColumnName="KEY_SEARCH" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="NguonTinDuBao" ColumnName="NguonTinDuBao" />
+                <ScalarProperty Name="NguoiDang" ColumnName="NguoiDang" />
+                <ScalarProperty Name="BanTin_Status" ColumnName="BanTin_Status" />
+                <ScalarProperty Name="TrangThaiDuyet" ColumnName="TrangThaiDuyet" />
+                <ScalarProperty Name="MaLoaiThienTai" ColumnName="MaLoaiThienTai" />
+                <ScalarProperty Name="TenToChucDuBao" ColumnName="TenToChucDuBao" />
+                <ScalarProperty Name="MaCapDoDuBao" ColumnName="MaCapDoDuBao" />
+                <ScalarProperty Name="ThoiGianDuBao" ColumnName="ThoiGianDuBao" />
+                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+                <ScalarProperty Name="MoTaViTri" ColumnName="MoTaViTri" />
+                <ScalarProperty Name="MaKVHC" ColumnName="MaKVHC" />
+                <ScalarProperty Name="MaLoaiBanTin" ColumnName="MaLoaiBanTin" />
+                <ScalarProperty Name="NgayThucHien" ColumnName="NgayThucHien" />
+                <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+                <ScalarProperty Name="TomTatNoiDung" ColumnName="TomTatNoiDung" />
+                <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TepBanTinDinhKems">
+            <EntityTypeMapping TypeName="TESTModel.TepBanTinDinhKem">
+              <MappingFragment StoreEntitySet="TepBanTinDinhKem">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="IsHinhAnh" ColumnName="IsHinhAnh" />
+                <ScalarProperty Name="IsVideo" ColumnName="IsVideo" />
+                <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+                <ScalarProperty Name="NgayDinhKem" ColumnName="NgayDinhKem" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="MaBanTinDuBao" ColumnName="MaBanTinDuBao" />
+                <ScalarProperty Name="TenTapTin" ColumnName="TenTapTin" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThongTinGiayPheps">
+            <EntityTypeMapping TypeName="TESTModel.ThongTinGiayPhep">
+              <MappingFragment StoreEntitySet="ThongTinGiayPhep">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="LyDoThuHoi" ColumnName="LyDoThuHoi" />
+                <ScalarProperty Name="TrangThaiGiayPhep" ColumnName="TrangThaiGiayPhep" />
+                <ScalarProperty Name="MaCapDoDuBao" ColumnName="MaCapDoDuBao" />
+                <ScalarProperty Name="DonViKyXacNhan" ColumnName="DonViKyXacNhan" />
+                <ScalarProperty Name="GiaHan" ColumnName="GiaHan" />
+                <ScalarProperty Name="DoiTuongCungCap" ColumnName="DoiTuongCungCap" />
+                <ScalarProperty Name="PhamViHoatDong" ColumnName="PhamViHoatDong" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
+                <ScalarProperty Name="Nam" ColumnName="Nam" />
+                <ScalarProperty Name="SoHieu" ColumnName="SoHieu" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhuVucs">
+            <EntityTypeMapping TypeName="TESTModel.KhuVuc">
+              <MappingFragment StoreEntitySet="KhuVuc">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TenKhuVuc" ColumnName="TenKhuVuc" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiBanTins">
+            <EntityTypeMapping TypeName="TESTModel.LoaiBanTin">
+              <MappingFragment StoreEntitySet="LoaiBanTin">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="MaThanhPhanDuBao" ColumnName="MaThanhPhanDuBao" />
+                <ScalarProperty Name="TenLoaiBanTin" ColumnName="TenLoaiBanTin" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoaiThienTais">
+            <EntityTypeMapping TypeName="TESTModel.LoaiThienTai">
+              <MappingFragment StoreEntitySet="LoaiThienTai">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TenLoaiThienTai" ColumnName="TenLoaiThienTai" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CapDoes">
+            <EntityTypeMapping TypeName="TESTModel.CapDo">
+              <MappingFragment StoreEntitySet="CapDo">
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="TenLoaiCapDo" ColumnName="TenLoaiCapDo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="KhuVucHanhChinhs">
+            <EntityTypeMapping TypeName="TESTModel.KhuVucHanhChinh">
+              <MappingFragment StoreEntitySet="KhuVucHanhChinh">
+                <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+                <ScalarProperty Name="MaKVHC_CapTren" ColumnName="MaKVHC_CapTren" />
+                <ScalarProperty Name="TenKVHC" ColumnName="TenKVHC" />
+                <ScalarProperty Name="MaKVHC" ColumnName="MaKVHC" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DonViToChucs">
+            <EntityTypeMapping TypeName="TESTModel.DonViToChuc">
+              <MappingFragment StoreEntitySet="DonViToChuc">
+                <ScalarProperty Name="ToaDoY" ColumnName="ToaDoY" />
+                <ScalarProperty Name="ToaDoX" ColumnName="ToaDoX" />
+                <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+                <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
+                <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+                <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

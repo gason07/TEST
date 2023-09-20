@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TESTModelStoreContainer" CdmEntityContainer="TESTEntities">
+    <EntitySetMapping Name="Employees1">
+      <EntityTypeMapping TypeName="TESTModel.Employees1">
+        <MappingFragment StoreEntitySet="Employees1">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="DayTime" ColumnName="DayTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="TESTModel.Company">
+        <MappingFragment StoreEntitySet="Company">
+          <ScalarProperty Name="ThoiGianCapNhat" ColumnName="ThoiGianCapNhat" />
+          <ScalarProperty Name="AddressCompany" ColumnName="AddressCompany" />
+          <ScalarProperty Name="NameCompany" ColumnName="NameCompany" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanySTs">
+      <EntityTypeMapping TypeName="TESTModel.CompanyST">
+        <MappingFragment StoreEntitySet="CompanyST">
+          <ScalarProperty Name="ThoiGianCapNhat" ColumnName="ThoiGianCapNhat" />
+          <ScalarProperty Name="AddressURL" ColumnName="AddressURL" />
+          <ScalarProperty Name="AddressCompany" ColumnName="AddressCompany" />
+          <ScalarProperty Name="NameCompany" ColumnName="NameCompany" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BanDoes">
+      <EntityTypeMapping TypeName="TESTModel.BanDo">
+        <MappingFragment StoreEntitySet="BanDo">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ThoiGianCapNhat" ColumnName="ThoiGianCapNhat" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="DuongDanURL" ColumnName="DuongDanURL" />
+          <ScalarProperty Name="TenTapTin" ColumnName="TenTapTin" />
+          <ScalarProperty Name="LoaiBanDo" ColumnName="LoaiBanDo" />
+          <ScalarProperty Name="TenBanDo" ColumnName="TenBanDo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PhimHinhAnhs">
+      <EntityTypeMapping TypeName="TESTModel.PhimHinhAnh">
+        <MappingFragment StoreEntitySet="PhimHinhAnh">
+          <ScalarProperty Name="IsImage" ColumnName="IsImage" />
+          <ScalarProperty Name="IsVideo" ColumnName="IsVideo" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="ThoiGianCapNhat" ColumnName="ThoiGianCapNhat" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="DuongDanURL" ColumnName="DuongDanURL" />
+          <ScalarProperty Name="TenTapTin" ColumnName="TenTapTin" />
+          <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FileDinhKems">
+      <EntityTypeMapping TypeName="TESTModel.FileDinhKem">
+        <MappingFragment StoreEntitySet="FileDinhKem">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsImage" ColumnName="IsImage" />
+          <ScalarProperty Name="IsVideo" ColumnName="IsVideo" />
+          <ScalarProperty Name="DuongDanURL" ColumnName="DuongDanURL" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
+          <ScalarProperty Name="TenFileDinhKem" ColumnName="TenFileDinhKem" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BanTinDuBaos">
+      <EntityTypeMapping TypeName="TESTModel.BanTinDuBao">
+        <MappingFragment StoreEntitySet="BanTinDuBao">
+          <ScalarProperty Name="KEY_SEARCH" ColumnName="KEY_SEARCH" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="NguonTinDuBao" ColumnName="NguonTinDuBao" />
+          <ScalarProperty Name="NguoiDang" ColumnName="NguoiDang" />
+          <ScalarProperty Name="BanTin_Status" ColumnName="BanTin_Status" />
+          <ScalarProperty Name="TrangThaiDuyet" ColumnName="TrangThaiDuyet" />
+          <ScalarProperty Name="MaLoaiThienTai" ColumnName="MaLoaiThienTai" />
+          <ScalarProperty Name="TenToChucDuBao" ColumnName="TenToChucDuBao" />
+          <ScalarProperty Name="MaCapDoDuBao" ColumnName="MaCapDoDuBao" />
+          <ScalarProperty Name="ThoiGianDuBao" ColumnName="ThoiGianDuBao" />
+          <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+          <ScalarProperty Name="MoTaViTri" ColumnName="MoTaViTri" />
+          <ScalarProperty Name="MaKVHC" ColumnName="MaKVHC" />
+          <ScalarProperty Name="MaLoaiBanTin" ColumnName="MaLoaiBanTin" />
+          <ScalarProperty Name="NgayThucHien" ColumnName="NgayThucHien" />
+          <ScalarProperty Name="NoiDung" ColumnName="NoiDung" />
+          <ScalarProperty Name="TomTatNoiDung" ColumnName="TomTatNoiDung" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TepBanTinDinhKems">
+      <EntityTypeMapping TypeName="TESTModel.TepBanTinDinhKem">
+        <MappingFragment StoreEntitySet="TepBanTinDinhKem">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsHinhAnh" ColumnName="IsHinhAnh" />
+          <ScalarProperty Name="IsVideo" ColumnName="IsVideo" />
+          <ScalarProperty Name="DuongDan" ColumnName="DuongDan" />
+          <ScalarProperty Name="NgayDinhKem" ColumnName="NgayDinhKem" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="MaBanTinDuBao" ColumnName="MaBanTinDuBao" />
+          <ScalarProperty Name="TenTapTin" ColumnName="TenTapTin" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ThongTinGiayPheps">
+      <EntityTypeMapping TypeName="TESTModel.ThongTinGiayPhep">
+        <MappingFragment StoreEntitySet="ThongTinGiayPhep">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="LyDoThuHoi" ColumnName="LyDoThuHoi" />
+          <ScalarProperty Name="TrangThaiGiayPhep" ColumnName="TrangThaiGiayPhep" />
+          <ScalarProperty Name="MaCapDoDuBao" ColumnName="MaCapDoDuBao" />
+          <ScalarProperty Name="DonViKyXacNhan" ColumnName="DonViKyXacNhan" />
+          <ScalarProperty Name="GiaHan" ColumnName="GiaHan" />
+          <ScalarProperty Name="DoiTuongCungCap" ColumnName="DoiTuongCungCap" />
+          <ScalarProperty Name="PhamViHoatDong" ColumnName="PhamViHoatDong" />
+          <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+          <ScalarProperty Name="NgayThang" ColumnName="NgayThang" />
+          <ScalarProperty Name="Nam" ColumnName="Nam" />
+          <ScalarProperty Name="SoHieu" ColumnName="SoHieu" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhuVucs">
+      <EntityTypeMapping TypeName="TESTModel.KhuVuc">
+        <MappingFragment StoreEntitySet="KhuVuc">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="TenKhuVuc" ColumnName="TenKhuVuc" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiBanTins">
+      <EntityTypeMapping TypeName="TESTModel.LoaiBanTin">
+        <MappingFragment StoreEntitySet="LoaiBanTin">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="MaThanhPhanDuBao" ColumnName="MaThanhPhanDuBao" />
+          <ScalarProperty Name="TenLoaiBanTin" ColumnName="TenLoaiBanTin" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiThienTais">
+      <EntityTypeMapping TypeName="TESTModel.LoaiThienTai">
+        <MappingFragment StoreEntitySet="LoaiThienTai">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="TenLoaiThienTai" ColumnName="TenLoaiThienTai" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CapDoes">
+      <EntityTypeMapping TypeName="TESTModel.CapDo">
+        <MappingFragment StoreEntitySet="CapDo">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="TenLoaiCapDo" ColumnName="TenLoaiCapDo" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhuVucHanhChinhs">
+      <EntityTypeMapping TypeName="TESTModel.KhuVucHanhChinh">
+        <MappingFragment StoreEntitySet="KhuVucHanhChinh">
+          <ScalarProperty Name="MaKhuVuc" ColumnName="MaKhuVuc" />
+          <ScalarProperty Name="MaKVHC_CapTren" ColumnName="MaKVHC_CapTren" />
+          <ScalarProperty Name="TenKVHC" ColumnName="TenKVHC" />
+          <ScalarProperty Name="MaKVHC" ColumnName="MaKVHC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DonViToChucs">
+      <EntityTypeMapping TypeName="TESTModel.DonViToChuc">
+        <MappingFragment StoreEntitySet="DonViToChuc">
+          <ScalarProperty Name="ToaDoY" ColumnName="ToaDoY" />
+          <ScalarProperty Name="ToaDoX" ColumnName="ToaDoX" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="MaSoThue" ColumnName="MaSoThue" />
+          <ScalarProperty Name="DiaChi" ColumnName="DiaChi" />
+          <ScalarProperty Name="TenDonVi" ColumnName="TenDonVi" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
