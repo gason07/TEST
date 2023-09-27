@@ -23,6 +23,9 @@ namespace TEST.Controllers
     {
         TESTEntities dbContext = new TESTEntities();
 
+
+        //TEST CHỨC NĂNG CỦA GITHUB
+
         //    //METHOD: GET
         //    //-----------GET All List
         //public IEnumerable<Employees1> Get() //truy van ta ca du lieu tu database cua sql
