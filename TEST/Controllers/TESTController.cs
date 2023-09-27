@@ -26,6 +26,8 @@ namespace TEST.Controllers
 
         //TEST CHỨC NĂNG CỦA GITHUB
 
+            //OKEE
+
         //    //METHOD: GET
         //    //-----------GET All List
         //public IEnumerable<Employees1> Get() //truy van ta ca du lieu tu database cua sql
