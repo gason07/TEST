@@ -396,6 +396,8 @@
     </Compile>
     <Compile Include="Utilities\ClsFtp.cs" />
     <Compile Include="Utilities\ClsFunctionDate.cs" />
+    <Compile Include="Xoa1\oke1.cs" />
+    <Compile Include="Xoa\oke.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
